@@ -177,6 +177,11 @@ a {
 
 }
 
+#image-container2 img {
+    width: 200px;
+
+}
+
 
 .buttons {
     display: flex;
@@ -239,6 +244,11 @@ a {
     flex-direction: column;
 }
 
+a {
+    font-style: none;
+    text-decoration: none;
+}
+
 .smallBox h1 {
     font-size: 1rem;
 }
@@ -269,7 +279,7 @@ a {
 
     margin: 10px;
 
-    padding: 10px;
+    padding: 1rem;
 
     border-radius: 20px;
 }
@@ -277,4 +287,39 @@ a {
 .footer h1,
 .footer p {
     color: white;
+}
+
+.max-w {
+    max-width: 320px;
+}
+
+.max-h {
+    max-height: 600px;
+}
+
+.min-h {
+    min-height: 480px;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.rounded-xl {
+    border-radius: 1rem;
+    /* You can adjust the value as needed */
+}
+
+iframe {
+    border: none;
+}
+
+.flex {
+    display: flex;
+    gap: 1rem;
+    margin: 0.2rem;
 }

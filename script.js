@@ -34,6 +34,7 @@ const imageUrls = [
     // Add more image URLs as needed
 ];
 const imageContainer = document.getElementById('image-container');
+const imageContainer2 = document.getElementById('image-container2');
 let currentIndex = 0;
 // Create an array to hold preloaded images
 const preloadedImages = [];
@@ -54,6 +55,7 @@ preloadImages();
 function loopImages() {
     // Clear the previous image
     imageContainer.innerHTML = '';
+    // imageContainer2.innerHTML = '';
 
     // Create an <img> element
     const imgElement = document.createElement('img');
@@ -66,16 +68,40 @@ function loopImages() {
 
     // Append the <img> element to the container
     imageContainer.appendChild(imgElement);
+    // imageContainer2.appendChild(imgElement);
+
+    // Increment the index for the next iteration
+    currentIndex = (currentIndex + 1) % preloadedImages.length;
+}
+function loopImages2() {
+    // Clear the previous image
+    // imageContainer.innerHTML = '';
+    imageContainer2.innerHTML = '';
+
+    // Create an <img> element
+    const imgElement = document.createElement('img');
+
+    // Set the image source to the current index in the array
+    imgElement.src = preloadedImages[currentIndex].src;
+
+    // Apply the mix-blend-mode CSS property
+    imgElement.style.mixBlendMode = 'multiply';
+
+    // Append the <img> element to the container
+    // imageContainer.appendChild(imgElement);
+    imageContainer2.appendChild(imgElement);
 
     // Increment the index for the next iteration
     currentIndex = (currentIndex + 1) % preloadedImages.length;
 }
 
 // Call the loopImages function initially
+loopImages2();
 loopImages();
 
 // Set an interval to call loopImages every 3 seconds (3000 milliseconds)
 const intervalId = setInterval(loopImages, 3000);
+const intervalId2 = setInterval(loopImages2, 3000);
 
 
 
@@ -198,7 +224,7 @@ gsap.timeline({
     .fromTo(content, {
         xPercent: 0
     }, {
-        xPercent: -50,
+        xPercent: -60,
         easy: "none"
     }, 0)
 
